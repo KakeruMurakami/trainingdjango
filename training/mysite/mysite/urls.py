@@ -19,5 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
-    
+    url(r'^login/', 'django.contrib.auth.views.login',
+        {'template_name': 'polls/login.html'}),
+    url(r'^logout/', 'django.contrib.auth.views.logout',
+        {'template_name': 'polls/logout.html'}),
 ]

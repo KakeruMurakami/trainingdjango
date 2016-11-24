@@ -44,5 +44,13 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-      
 #ページの表示をclassで作成し、機能をdefで作成する。
+
+@login_required
+def myadmin(request):
+    return render(request, 'main/myadmin.html')
+ 
+ 
+@login_required
+def redilect(request):
+    return render(request, 'main/redilect.html')
